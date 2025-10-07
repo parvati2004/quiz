@@ -7,11 +7,11 @@ dotenv.config();
 
 const runTest = async () => {
   try {
-    // 1️⃣ Connect to the database
+    //  Connect to the database
     await connectDB();
-    console.log("✅ Connected to MongoDB successfully.");
+    console.log(" Connected to MongoDB successfully.");
 
-    // 2️⃣ Create a new school
+    //  Create a new school
     const newSchool = new School({
       id: "S001",
       name: "Sunrise Public School",
@@ -20,19 +20,19 @@ const runTest = async () => {
       coordinatorEmail: "coordinator@sunrise.com",
     });
 
-    // 3️⃣ Save school to DB
+    // Save school to DB
     const savedSchool = await newSchool.save();
-    console.log("✅ Saved School:", savedSchool);
+    console.log(" Saved School:", savedSchool);
 
-    // 4️⃣ Fetch all schools
+    // Fetch all schools
     const schools = await School.find();
     console.log(`📋 All Schools (${schools.length}):`, schools);
   } catch (err) {
-    console.error("❌ Error occurred:", err.message);
+    console.error(" Error occurred:", err.message);
   } finally {
-    // 5️⃣ Close DB connection
+    //  Close DB connection
     await mongoose.connection.close();
-    console.log("🔒 MongoDB connection closed.");
+    console.log(" MongoDB connection closed.");
   }
 };
 
