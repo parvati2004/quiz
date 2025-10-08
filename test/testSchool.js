@@ -14,8 +14,8 @@ const runTest = async () => {
     //  Create a new school
     const newSchool = new School({
       id: "S001",
-      name: "Sunrise Public School",
-      moderatorEmail: "moderator@sunrise.com",
+      name: "Sunrise Public School school ",
+      moderatorEmail: "moderator1@sunrise.com",
       city: "Pune",
       coordinatorEmail: "coordinator@sunrise.com",
     });
